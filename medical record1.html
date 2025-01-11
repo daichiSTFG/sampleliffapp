@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録フォーム</title>
+    <script>
+        window.addEventListener("beforeunload", (event) => {
+      const confirmationMessage = "入力内容を破棄します。";
+      event.returnValue = confirmationMessage;
+      return confirmationMessage;
+    });
+        </script>
+    <style>
+        body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        
+        form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        margin: 10px 0;
+        }
+        
+        h2 {
+        text-align: center;
+        color: #ff6363;
+        margin-bottom: 20px;
+        }
+        
+        label {
+        display: block;
+        margin: 15px 0 5px;
+        font-weight: bold;
+        color: #555;
+        }
+        
+        input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        }
+        
+        textarea {
+        resize: vertical;
+        }
+        
+        button {
+        background-color: #ff6363;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        display: inline-block;
+        }
+        
+        button:hover {
+        background-color: #ff4747;
+        }
+        </style>
+</head>
+<body>
+    <form>
+    <div>
+        <h2>【死亡報告】</h2>
+        <div>
+            <label for="ma-1">報告日</label>
+            <input type="date" placeholder="2020-01-01" max="9999-12-31" required>
+        </div>
+        <div>
+            <label for="ma-1">報告者</label>
+            <input type="text" placeholder="テスト パンダ" maxlength="12" required>
+        </div>
+        <div>
+            <label for="">役職</label>
+            <select name="post" id="">
+                <option value="tester">テスター</option>
+                <option value="worker">作業員</option>
+            </select>
+        </div>
+        <div>
+            <label for="">電話番号</label>
+            <input type="tel" name="phone" pattern="^(+|)\d{2,4}-\d{3,4}-\d{3,4}" placeholder="00077771230" required>
+        </div>
+        <div>
+            <label for="">故人氏名</label>
+            <input type="text" placeholder="テスト ラッコ" maxlength="15"required>
+        </div>
+        <div>
+            <label for="">年齢</label>
+            <input type="text" placeholder="20" maxlength="5"required>
+        </div>
+        <div>
+            <label for="">本部</label>
+            <select name="Headquarters" id="">
+                <option value="egg">卵</option>
+                <option value="sakura">桜</option>
+                <option value="dragonfly">とんぼ</option>
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">支部</label>
+            <select name="branch" id="">
+                <option value="ad">ad</option>
+                <option value="ki">ki</option>
+                <option value="tt">tt</option>
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">部別</label>
+            <select name="Department" id="">
+                <option value="gg">gg</option>
+                <option value="ccc">ccc</option>
+                <option value="hw">hw</option>
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">役職</label>
+            <select name="post" id="">
+                <option value="tester">テスター</option>
+                <option value="worker">作業員</option>
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">死亡年月日</label>
+            <input type="date" max="9999-12-31">
+        </div>
+        <div>
+            <label for="">通夜開催日時</label>
+            <input type="date" max="9999-12-31">
+        </div>
+        <div>
+            <label>通夜開催場所</label>
+            <input type="text" placeholder="冠婚葬祭センター003" maxlength="30">
+        </div>
+        <div>
+            <label for="">告別式開催日時</label>
+            <input type="date" max="9999-12-31">
+        </div>
+        <div>
+            <label for="">告別式開催場所</label>
+            <input type="text" placeholder="冠婚葬祭センター003" maxlength="30">
+        </div>
+        <div>
+            <label for="">葬儀形式</label>
+            <select name="funeral" id="">
+                <option value="family funeral">家族葬</option>
+                <option value="friend funeral">友人葬</option>
+                <option value="others">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">喪主氏名</label>
+            <input type="text" placeholder="テスト シマウマ" maxlength="15">
+        </div>
+        <div>
+            <label for="">続柄</label>
+            <select name="relationship" id="">
+                <option value="cc">cc</option>
+                <option value="sh">sh</option>
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="">喪主役職</label>
+            <select name="post" id="">
+                <option value="etc">その他</option>
+            </select>
+        </div>
+        <div>
+            <label for="comments">備考</label>
+            <textarea name="comments" id="comments" maxlength="300"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="登録する">
+        </div>
+    </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+        
+        $(document).ready(function () {
+            const liffId = "2006631786-LBg8yoe0";
+            initializeLiff(liffId);
+        })
+
+        function initializeLiff(liffId) {
+            liff.init({
+                liffId: liffId
+            }).then(() => {
+                initializeApp();
+            }).catch((err) => {
+                console.log('LIFF Initialization failed ', err);
+            });
+        }
+
+        function sendText(text) {
+            liff.sendMessages([{
+                'type': 'text',
+                'text': text
+            }]).then(function () {
+                liff.closeWindow();
+            }).catch(function (error) {
+                window.alert('Failed to send message ' + error);
+            });
+        }
+        
+        const params = (new URL(document.location)).searchParams;
+        const key = params.get('key');
+
+        $(function () {
+            $('form').submit(function () {
+                const name    = $('input[name="name"]').val();
+                const udetate = $('input[name="udetate"]').val();
+                const fukkin  = $('input[name="fukkin"]').val();
+                const haikin  = $('input[name="haikin"]').val();
+                const sukuwat = $('input[name="sukuwat"]').val();
+                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                sendText(msg);
+                return false;
+            });
+        });
+
+    </script>
+</body>
+</html>
